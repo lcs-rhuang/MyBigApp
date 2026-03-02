@@ -21,20 +21,29 @@ struct ContentView: View {
                     
                     //Left
                     
-                    Text("L")
-                        .foregroundStyle(Color.white)
-                        .padding()
-                        .background {
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(Color.black)
+                    VStack {
+                        Text("L")
+                            .foregroundStyle(Color.white)
+                            .padding()
+                            .background {
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color.black)
+                           
+                                Text("R")
+                                    .foregroundStyle(Color.white)
+                                    .padding()
+                                    .background {
+                                        RoundedRectangle(cornerRadius: 15)
+                                            .fill(Color.black)
+                                    }
                                 
-                            
-                        }
+                            }
+                    }
                 }
             }
-        
-        //Space between Flylite and Hand
-           .padding()
+            
+            //Space between Flylite and Hand
+            .padding()
             //Top Left Title
             .navigationTitle("Flylite")
             //Back button
@@ -44,24 +53,21 @@ struct ContentView: View {
                         
                     } label: {
                         Text("\(Image(systemName: "chevron.backward"))")
-                        
-                    
-                    
                     }
-                
-                
                 }
-                
             }
         }
     }
 }
 
-    
-    
+
+
 #Preview {
     ContentView()
 }
+
+
+
 
 
 
