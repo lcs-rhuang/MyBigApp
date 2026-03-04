@@ -92,8 +92,9 @@ struct MyBigApp2: View {
                 }
                 //moving the whole thing up
                 Spacer()
-                Spacer()
-                Spacer()
+    
+    
+                    
                 
                        
                 // back button
