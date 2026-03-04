@@ -12,47 +12,51 @@ struct ContentView: View {
     @State private var selection = "FlyLite"
     
     var body: some View {
-        NavigationStack{
-            HStack {
-                //Left hand Right Hand
-                GeometryReader { GeometryProxy in
-                    Text("Hand")
-                        .font(Font.system(size: 25))
+        NavigationStack {
+            VStack(alignment: .leading, spacing: 20) {
+                
+                //space between L and R
+        HStack(spacing: 20) {
                     
-                    //Left
+                    //Hand text
+        Text("Hand")
+                        .font(.system(size: 25))
                     
-                    VStack {
-                        Text("L")
-                            .foregroundStyle(Color.white)
-                            .padding()
-                            .background {
-                                RoundedRectangle(cornerRadius: 15)
-                                    .fill(Color.black)
-                           
-                                Text("R")
-                                    .foregroundStyle(Color.white)
-                                    .padding()
-                                    .background {
-                                        RoundedRectangle(cornerRadius: 15)
-                                            .fill(Color.black)
-                                    }
-                                
-                            }
-                    }
+            //Left
+                    Text("L")
+        .foregroundStyle(.white)
+        .padding()
+            .background(
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(.black))
+                    //Right
+                Text("R")
+                        .foregroundStyle(.white)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(.black)
+            )
                 }
+    
+                Spacer()
             }
             
-            //Space between Flylite and Hand
-            .padding()
-            //Top Left Title
+            
+            //moving it left so its the .leading thing on my plan
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
+    
+            //FlyLite Title
             .navigationTitle("Flylite")
-            //Back button
+            
+            // back button
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button {
+        Button {
                         
-                    } label: {
-                        Text("\(Image(systemName: "chevron.backward"))")
+            } label: {
+                        Image(systemName: "chevron.backward")
                     }
                 }
             }
@@ -62,12 +66,8 @@ struct ContentView: View {
 
 
 
+
 #Preview {
     ContentView()
 }
-
-
-
-
-
 
